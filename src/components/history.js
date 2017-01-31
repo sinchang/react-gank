@@ -43,7 +43,7 @@ class History extends Component {
                 <div className="container">
                     <div className="list-group">
                         {this.state.dates.map((date, index) =>
-                            <a href={'day/' + date} className="list-group-item" key={index}>{date}</a>
+                            <a href={'#day/' + date} className="list-group-item" key={index}>{date}</a>
                         )}
                     </div>
                 </div>

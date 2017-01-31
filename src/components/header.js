@@ -6,11 +6,24 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.hideModal = this.hideModal.bind(this);
+        this.navbarToggle = this.navbarToggle.bind(this);
         this.state = {
             isOpen: false
         }
     }
-    
+
+    navbarToggle() {
+        var navbar = document.querySelector('.navbar-toggle');
+        var collapse = document.querySelector('.navbar-collapse');
+        if (navbar.classList.contains('collapsed')) {
+            collapse.classList.add('collapse');
+            navbar.classList.remove('collapsed');
+        } else {
+            navbar.classList.add('collapsed');
+            collapse.classList.remove('collapse');
+        }
+    }
+
     hideModal() {
         this.setState({
             isOpen: false
@@ -23,7 +36,7 @@ class Header extends Component {
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" onClick={this.navbarToggle} >
                                 <span className="sr-only">Toggle navigation</span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
@@ -68,12 +81,12 @@ class Header extends Component {
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
                                 <li><a href="https://github.com/sinchang/react-gank" target="_blank">Github</a></li>
-                                <li><a onClick={() => this.setState({isOpen: true})}>提交干货</a></li>
+                                <li><a onClick={() => this.setState({ isOpen: true })}>提交干货</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <Modal isShow={this.state.isOpen} hideModal={this.hideModal}/>
+                <Modal isShow={this.state.isOpen} hideModal={this.hideModal} />
             </div>
         );
     }

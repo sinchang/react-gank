@@ -1,6 +1,8 @@
 ## react-gank
 
-> 基于 React 的一个网页版干货集中营
+> gank.io clone built with React & React Router
+
+[Live Demo](http://react-gank.sinchang.me/)
 
 ## Build Setup
 
@@ -9,7 +11,7 @@
 npm install
 
 # serve with hot reload at localhost:3000
-npm run dev
+npm start
 
 # build for production with minification
 npm run build
