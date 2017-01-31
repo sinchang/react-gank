@@ -1,7 +1,6 @@
 {
   "name": "react-gank",
   "version": "0.1.0",
-  "homepage": "https://sinchang.github.io/react-gank/build",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.5"
