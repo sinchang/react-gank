@@ -40,13 +40,16 @@ class Home extends Component {
                 let content = res.data.results[0];
                 if (!content) {
                     this.setState({
-                        isEmpty: true
+                        isEmpty: true,
+                        loading: false
                     })
+                    return;
                 }
 
                 this.setState({
                     loading: false,
-                    content: content
+                    content: content,
+                    isEmpty: false
                 })
             })
             .catch((error) => {

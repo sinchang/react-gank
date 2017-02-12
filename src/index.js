@@ -7,6 +7,6 @@ import './css/gank.css';
 import './css/bootstrap.css';
 
 ReactDOM.render(
-  <Routes history = {hashHistory} />,
+  <Routes history={hashHistory} />,
   document.getElementById('root')
 );
