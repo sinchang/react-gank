@@ -41,7 +41,8 @@ class Home extends Component {
                 if (!content) {
                     this.setState({
                         isEmpty: true,
-                        loading: false
+                        loading: false,
+                        content: ''
                     })
                     return;
                 }
