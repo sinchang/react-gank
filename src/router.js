@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import Home from './components/Home';
-import History from './components/History';
-import Category from './components/Category';
+import Home from './components/home';
+import History from './components/history';
+import Category from './components/category';
 import App from './components/App'
 
 const Routes = (props) => (

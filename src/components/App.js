@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Modal from './Modal';
+import Header from './header';
+import Footer from './footer';
+import Modal from './modal';
 
 class App extends Component {
   constructor(props) {

@@ -10,7 +10,6 @@ class Category extends Component {
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
     this.state = {
-      loading: false,
       page: 1,
       datas: [],
       type: 1,
