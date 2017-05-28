@@ -1,55 +1,40 @@
 import React, { Component } from 'react';
-import Header from './header';
-import Loading from './loading';
-import Footer from './footer';
 import axios from 'axios';
 import constant from '../common/constant';
 
 class History extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            dates: [],
-            loading: false
-        }
+    this.state = {
+      dates: []
     }
+  }
 
-    componentDidMount() {
+  componentDidMount() {
+    axios.get(constant.APIURL + 'day/history')
+      .then((res) => {
         this.setState({
-            loading: true
+          dates: res.data.results
         });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
-        axios.get(constant.APIURL + 'day/history')
-            .then((res) => {
-                this.setState({
-                    dates: res.data.results,
-                    loading: false
-                });
-            })
-            .catch((error) => {
-                this.setState({
-                    loading: false
-                });
-                console.log(error);
-            })
-    }
-
-    render() {
-        return (
-            <div className="history">
-                <Loading isShow={this.state.loading} />
-                <Header />
-                <div className="container">
-                    <div className="list-group">
-                        {this.state.dates.map((date, index) =>
-                            <a href={'#day/' + date} className="list-group-item" key={index}>{date}</a>
-                        )}
-                    </div>
-                </div>
-                <Footer/>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="history">
+        <div className="container">
+          <div className="list-group">
+            {this.state.dates.map((date, index) =>
+              <a href={'#day/' + date} className="list-group-item" key={index}>{date}</a>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 export default History;

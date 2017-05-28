@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { hashHistory } from 'react-router';
-import Routes from './routes';
+import Router from './router';
 
 import './css/gank.css';
 import './css/bootstrap.css';
 
 ReactDOM.render(
-  <Routes history={hashHistory} />,
+  <Router history={hashHistory} />,
   document.getElementById('root')
 );
