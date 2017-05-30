@@ -6,7 +6,7 @@ import History from './components/history';
 import Category from './components/category';
 import App from './components/App'
 
-const Routes = (props) => (
+const Router = (props) => (
   <Router {...props}>
     <Route path="/" component={App} >
       <IndexRoute component={Home}/>
@@ -16,4 +16,4 @@ const Routes = (props) => (
     </Route>
   </Router>
 );
-export default Routes;
+export default Router;
